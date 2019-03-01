@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="brand">
     <intro-header-app :boldHead="spanEl" :heading="heading" :subInfo="subInfo"></intro-header-app>
     <div class="grid-container">
       <div class="hand-design">

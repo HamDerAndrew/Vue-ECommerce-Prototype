@@ -12,8 +12,8 @@
                 </div>
                 <div class="account-shopping">
                     <div class="account">
-                        <a href="#">Register</a>
-                        <a href="#">Sign In</a>
+                        <router-link to="/registerpage">Sign In</router-link>
+                        <router-link to="/registerpage">Register</router-link>
                     </div>
                     <div id="cart">
                         <i class="fas fa-shopping-cart"><span class="cart-items">empty</span></i>

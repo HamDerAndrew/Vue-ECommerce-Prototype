@@ -245,6 +245,7 @@ a:focus {
 /* Home page */
 .promo-slider {
     margin-top: -103px;
+    position: relative;
     .slide-btn {
         position: absolute;
         bottom: 15%;
@@ -323,19 +324,25 @@ a:focus {
             margin: 20px;
         }
     }
-    // @media screen and(max-width: 1300px) {
-    //     h2 {
-    //         font-size: 15px;
-    //     }
-    //     h5 {
-    //         font-size: 11px;
-    //     }
-    //     p {
-    //         font-size: 12px;
-    //     }
-    // }
     
 }
+
+/* Regiser page */
+.account-page {
+    width: $globalWidth;
+    display: flex;
+    justify-content: space-between;
+    margin: 40px auto;
+    .account-register, .account-signin {
+        width: 45%
+    }
+}
+.vertical-line {
+    width: 1px;
+    background-color: #eeeeee;
+}
+
+
 .img-responsive {
     max-width: 100%;
     height: auto;
