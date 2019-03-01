@@ -25,7 +25,7 @@
         <div id="main-header"> <!-- Main Header Start -->
             <div class="header-container">
                 <div class="logo">
-                    <span>Avenue</span> Fashion
+                    <router-link to="/"><span>Avenue</span> Fashion</router-link>
                 </div>
                 <div class="nav-container">
                     <div class="search-nav-wrap">
@@ -74,7 +74,7 @@
                                 </div> <!-- Womens Products end -->
                             </li>
                             <li class="category-menu"> 
-                                <a href="#" class="category--link">The Brand</a>
+                                    <router-link to="/brand">The Brand</router-link>
                             </li>
                             <li class="category-menu"> <a href="#" class="category--link">Local stores <i class="fas fa-caret-down"></i></a>
                                 <div class="category-menu__tab"> <!-- Local Stores start -->
