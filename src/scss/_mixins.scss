@@ -4,3 +4,21 @@
     justify-content: space-between;
     padding: 10px;
 }
+
+@mixin ctaButton {
+    font-family: $fontHeader;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 2px solid #737373;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 5px 10px;
+    &:hover {
+        background-color: $linkStates;
+        transition: .5s;
+        color: $primaryColor;
+        border-color: $linkStates;
+    }
+}

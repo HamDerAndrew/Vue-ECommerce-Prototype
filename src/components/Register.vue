@@ -33,6 +33,7 @@ export default {
 
 <style lang="scss">
 @import "@/scss/_var.scss";
+@import "@/scss/_mixins.scss";
 
 .register-heading {
     text-align: left;
@@ -68,21 +69,7 @@ export default {
         justify-content: space-between;
         button {
             width: 40%;
-            font-family: $fontHeader;
-            font-weight: 500;
-            text-transform: uppercase;
-            background-color: transparent;
-            border: 2px solid #737373;
-            font-size: 13px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            padding: 5px 10px;
-            &:hover {
-                background-color: $linkStates;
-                transition: .5s;
-                color: $primaryColor;
-                border-color: $linkStates;
-            }
+            @include ctaButton;
         }
         p {
             width: 40%;

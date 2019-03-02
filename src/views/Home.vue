@@ -6,12 +6,13 @@
     </div>
     <section id="product-section">
       <div class="product-displays">
+        <hr>
         <ul class="product-display__list">
-          <li><a>popular</a></li>
-          <li><a>new arrivals</a></li>
-          <li><a>best sellers</a></li>
-          <li><a>special offers</a></li>
-          <li><a>coming soon</a></li>
+          <li><a href="#">popular</a></li>
+          <li><a href="#">new arrivals</a></li>
+          <li><a href="#">best sellers</a></li>
+          <li><a href="#">special offers</a></li>
+          <li><a href="#">coming soon</a></li>
         </ul>
         <div id="popular">
           <div>
@@ -95,34 +96,34 @@
         <div>
           <img src="../assets/img/products/menslook.png" alt="" class="img-responsive">
           <div class="look-info">
-            <h2>Men's lookbook</h2>
+            <h2><span>Men's</span> lookbook</h2>
             <p>Lorem ipsum dolor sit amet eras facilisis
               consectetur adipiscing elit lor, integer lorem consecteur dignissim laciniqui.
               Elementum metus facilisis ut phasellu.
             </p>
-            <button>View now</button>
+            <button class="lookbook--btn">View now</button>
           </div>
         </div>
         <div>
           <img src="../assets/img/products/womenslook.png" alt="" class="img-responsive">
           <div class="look-info">
-            <h2>Women's lookbook</h2>
+            <h2><span>Women's</span> lookbook</h2>
             <p>Lorem ipsum dolor sit amet eras facilisis
               consectetur adipiscing elit lor, integer lorem consecteur dignissim laciniqui.
               Elementum metus facilisis ut phasellu.
             </p>
-            <button>View now</button>
+            <button class="lookbook--btn">View now</button>
           </div>
         </div>
         <div>
           <img src="../assets/img/products/yourlook.png" alt="" class="img-responsive">
           <div class="look-info">
-            <h2>Your lookbook</h2>
+            <h2><span>Your</span> lookbook</h2>
             <p>Lorem ipsum dolor sit amet eras facilisis
               consectetur adipiscing elit lor, integer lorem consecteur dignissim laciniqui.
               Elementum metus facilisis ut phasellu.
             </p>
-            <button>View now</button>
+            <button class="lookbook--btn">View now</button>
           </div>
         </div>
       </div>
@@ -134,6 +135,7 @@
 
 <style lang="scss">
 @import "@/scss/_var.scss";
+@import "@/scss/_mixins.scss";
 
 .product-information {
   visibility: hidden;
@@ -145,9 +147,28 @@
 }
 
 .product-display__list {
-  display: flex;
-  width: 50%;
-  justify-content: space-between;
+  width: 70%;
+  font-family: $fontHeader;
+  padding: 0 10px 0 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: left;
+  font-weight: bold;
+  color: $listTextColor;
+  letter-spacing: .5px;
+  cursor: pointer;
+  margin: 30px 0;
+  li {
+    display: inline-block;
+    margin-right: 20px;
+    &:hover, &:active {
+      color: $linkStates;
+    }
+    a {
+      text-decoration: none;
+      color: $listTextColor;
+    }
+  }
 }
 
 #popular {
@@ -210,8 +231,20 @@
     .look-info {
       position: absolute;
       width: 50%;
-      top: 0;
+      top: 10%;
       right: 10px;
+      text-align: right;
+      h2 {
+        font-size: 35px;
+        span {
+          font-weight: bold;
+        }
+      }
+      .lookbook--btn {
+        width: 150px;
+        height: 50px;
+        @include ctaButton;
+      }
     }
   }
 }

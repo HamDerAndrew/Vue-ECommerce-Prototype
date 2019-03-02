@@ -26,6 +26,7 @@ export default {
 
 <style lang="scss">
 @import "@/scss/_var.scss";
+@import "@/scss/_mixins.scss";
 
 .signin-heading {
     text-align: left;
@@ -62,21 +63,7 @@ export default {
         button {
             width: 25%;
             height: 50px;
-            font-family: $fontHeader;
-            font-weight: 500;
-            text-transform: uppercase;
-            background-color: transparent;
-            border: 2px solid #737373;
-            font-size: 16px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            padding: 0;
-            &:hover {
-                background-color: $linkStates;
-                transition: .5s;
-                color: $primaryColor;
-                border-color: $linkStates;
-            }
+            @include ctaButton;
         }
         p {
             width: 45%;
