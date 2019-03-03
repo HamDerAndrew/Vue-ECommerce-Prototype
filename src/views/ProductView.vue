@@ -8,7 +8,7 @@
                     <img src="../assets/img/products/item 7.png" alt="" class="img-responsive">
                  </div>
                  <div class="product-details">
-                     <h4>Product name here</h4>
+                     <h4>{{ products.name }}</h4>
                      <div class="product-reviews">
                         <div>
                             <p>***** <span class="reviews-received"></span> Review(s)</p>
@@ -123,15 +123,31 @@
 
 <script>
 import HeaderIntro from '../components/HeaderIntro.vue'
+import axios from "axios";
 export default {
      data() {
         return {
             spanEl: "Product",
             heading: "view",
             subInfo: "Gender - Category - Subcategory - Product",
-            activeTab: 1
+            activeTab: 1,
+            products: {}
         };
     },
+    created() {
+        this.getData();
+  },
+
+  methods: {
+    getData() {
+        let productId = this.$route.params.id; //grab parameter id from the URL
+        axios
+        .get("https://my-json-server.typicode.com/HamDerAndrew/vue-ecommerce-prototype/products")
+        .then(response => {this.products = response.data; console.log(this.products); console.log(productId)}) 
+        .catch(err => console.log(err.message));
+        
+    }
+  },
 
     components: {
         "intro-header-app": HeaderIntro

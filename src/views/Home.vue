@@ -17,7 +17,7 @@
         <div id="popular">
           <div>
             <!-- image -->
-            <router-link to="/productview"><img src="../assets/img/products/item 1.png" alt="" class="img-responsive"></router-link>
+            <router-link :to="'/productview/' + id"><img src="../assets/img/products/item 1.png" alt="" class="img-responsive"></router-link>
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -250,9 +250,15 @@
 <script>
 // @ is an alias to /src
 //import HelloWorld from '@/components/HelloWorld.vue'
+//import axios from "axios";
 
 export default {
-  name: 'home'
+  name: 'home',
+  data() {
+    return {
+
+    };
+  }
   // components: {
   //   HelloWorld
   // }

@@ -34,7 +34,7 @@ export default new Router({
     },
 
     {
-      path: '/productview',
+      path: '/productview/:id',
       name: 'productview',
       component: ProductView
     }
