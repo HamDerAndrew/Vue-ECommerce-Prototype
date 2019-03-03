@@ -15,69 +15,9 @@
           <li><a href="#">coming soon</a></li>
         </ul>
         <div id="popular">
-          <div>
+          <div v-for="product in products" :key="product.id">
             <!-- image -->
-            <router-link :to="'/productview/' + id"><img src="../assets/img/products/item 1.png" alt="" class="img-responsive"></router-link>
-            <div class="product-information">
-              <!-- product content on :hover here -->
-              <div class="product-information__icons">
-                <div class="circle">
-                  <i class="fas fa-shopping-cart"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <!-- image -->
-            <img src="../assets/img/products/item 2.png" class="img-responsive" alt="">
-            <div class="product-information">
-              <!-- product content on :hover here -->
-              <div class="product-information__icons">
-                <div class="circle">
-                  <i class="fas fa-shopping-cart"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <!-- image -->
-            <img src="../assets/img/products/item 3.png" class="img-responsive" alt="">
-            <div class="product-information">
-              <!-- product content on :hover here -->
-              <div class="product-information__icons">
-                <div class="circle">
-                  <i class="fas fa-shopping-cart"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <!-- image -->
-            <img src="../assets/img/products/item 4.png" class="img-responsive" alt="">
-            <div class="product-information">
-              <!-- product content on :hover here -->
-              <div class="product-information__icons">
-                <div class="circle">
-                  <i class="fas fa-shopping-cart"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <!-- image -->
-            <img src="../assets/img/products/test.png" alt="" class="img-responsive">
-            <div class="product-information">
-              <!-- product content on :hover here -->
-              <div class="product-information__icons">
-                <div class="circle">
-                  <i class="fas fa-shopping-cart"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <!-- image -->
-            <img src="../assets/img/products/item 6.png" alt="" class="img-responsive">
+            <router-link :to="'/productview/' + product.id"><img src="../assets/img/products/item 1.png" alt="" class="img-responsive"></router-link>
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -250,14 +190,29 @@
 <script>
 // @ is an alias to /src
 //import HelloWorld from '@/components/HelloWorld.vue'
-//import axios from "axios";
+import axios from "axios";
 
 export default {
   name: 'home',
   data() {
     return {
-
+      products: []
     };
+  },
+
+  created() {
+    this.getData();
+  },
+
+  methods: {
+    getData() {
+        axios
+        .get("https://my-json-server.typicode.com/HamDerAndrew/vue-ecommerce-prototype/products")
+        .then(response => {
+            this.products = response.data;
+        }) 
+        .catch(err => console.log(err.message));
+    }
   }
   // components: {
   //   HelloWorld
