@@ -17,7 +17,7 @@
         <div id="popular">
           <div>
             <!-- image -->
-            <img src="../assets/img/products/item 1.png" alt="">
+            <router-link to="/productview"><img src="../assets/img/products/item 1.png" alt="" class="img-responsive"></router-link>
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -29,7 +29,7 @@
           </div>
           <div>
             <!-- image -->
-            <img src="../assets/img/products/item 2.png" alt="">
+            <img src="../assets/img/products/item 2.png" class="img-responsive" alt="">
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -41,7 +41,7 @@
           </div>
           <div>
             <!-- image -->
-            <img src="../assets/img/products/item 3.png" alt="">
+            <img src="../assets/img/products/item 3.png" class="img-responsive" alt="">
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -53,7 +53,7 @@
           </div>
           <div>
             <!-- image -->
-            <img src="../assets/img/products/item 4.png" alt="">
+            <img src="../assets/img/products/item 4.png" class="img-responsive" alt="">
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -65,7 +65,7 @@
           </div>
           <div>
             <!-- image -->
-            <img src="../assets/img/products/test.png" alt="">
+            <img src="../assets/img/products/test.png" alt="" class="img-responsive">
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -77,7 +77,7 @@
           </div>
           <div>
             <!-- image -->
-            <img src="../assets/img/products/item 6.png" alt="">
+            <img src="../assets/img/products/item 6.png" alt="" class="img-responsive">
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -147,7 +147,6 @@
 }
 
 .product-display__list {
-  width: 70%;
   font-family: $fontHeader;
   padding: 0 10px 0 0;
   text-transform: uppercase;
@@ -179,10 +178,6 @@
   grid-column-gap: 10px;
   div {
     position: relative;
-    img {
-      max-width: 100%;
-      height: auto;
-    }
   }
   div:nth-child(1n){
     grid-column: 1 / 4;

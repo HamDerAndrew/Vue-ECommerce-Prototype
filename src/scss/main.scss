@@ -26,6 +26,10 @@ li {
     list-style: none;
 }
 
+label {
+    display: block;
+}
+
 a:hover,
 a:active,
 a:focus {
@@ -324,10 +328,9 @@ a:focus {
             margin: 20px;
         }
     }
-    
 }
 
-/* Regiser page */
+/* Register page */
 .account-page {
     width: $globalWidth;
     display: flex;
@@ -341,6 +344,191 @@ a:focus {
     width: 1px;
     background-color: #eeeeee;
 }
+
+
+/* Product view page */
+.product-view-container {
+    width: $globalWidth;
+    margin: 50px auto;
+    p {
+        font-size: 12px;
+    }
+    .product-view {
+        display: flex;
+        justify-content: space-between;
+        .product-image {
+            width: 48%;
+        }
+        .product-details {
+            width: 48%;
+            text-align: left;
+            h4 {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            .product-reviews {
+                div {
+                    display: inline-block;
+                    margin: auto 10px;
+                    font-family: $fontHeader;
+                    font-size: 12px;
+                    a {
+                        color: $listTitleColor;
+                        font-weight: 500;
+                        text-decoration: none;
+                        &:hover {
+                            color: $linkStates;
+                        }
+                    }
+                }
+                div:nth-child(1) {
+                    margin-left: 0;
+                    p {
+                        color: $listTextColor;
+                        font-weight: bold;
+                    }
+                }
+                div:nth-child(5) {
+                    span {
+                        padding-right: 5px;
+                        font-weight: 500;
+                    }
+                    .fab, .fas {
+                        font-size: 9px;
+                        margin-right: 8px;
+                        color: $paragraphColor;
+                        &:hover {
+                            color: $linkStates;
+                        }
+                    }
+                }
+            }
+            .product-price {
+                color: $paragraphColor;
+                font-size: 25px;
+            }
+            .product-stockinfo {
+                p {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color: $listTitleColor;
+                }
+                span {
+                    text-transform: unset;
+                    color: $paragraphColor;
+                }
+            }
+            .product-description {
+                ul {
+                    padding-left: 0;
+                    color: $paragraphColor;
+                    font-size: 12px;
+                }
+            }
+            .product-specification {
+                display: flex;
+                justify-content: space-between;
+                text-transform: uppercase;
+                font-weight: 500;
+                label {
+                    color: $listTitleColor;
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                    font-weight: bold;
+                }
+                select {
+                    padding: 5px 10px;
+                    width: 100%;
+                    font-family: $fontHeader;
+                    border-color: #e7e7e7;
+                }
+                .product-select {
+                    width: 35%;
+                }
+                .product-input {
+                    width: 15%;
+                    input[type="number"] {
+                        width: 100%;
+                        padding: 5px 10px;
+                        font-family: $fontHeader;
+                        border: 1px solid #e7e7e7;
+                    }
+                }
+            }
+            .product-view__buttons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .add--tocart, .add--tolookbook {
+                    margin-top: 30px;
+                    width: 45%;
+                    padding: 10px 10px !important;
+                    @include ctaButton;
+                    &:hover {
+                        background-color: $secondaryColor !important;
+                        border-color: $secondaryColor;
+                    }
+                }
+            }
+        }
+    }
+    .product-view__compare {
+        margin-top: 20px;
+        a {
+            text-decoration: none;
+            color: #454647;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: $fontHeader;
+        }
+        .fas {
+            color: $listTextColor;
+        }
+    }
+    .product-tabs-container {
+        margin-top: 40px;
+        #tabs {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            width: 100%;
+            a {
+                padding: 10px 20px;
+                width: 20%;
+                background-color: $primaryColor;
+                text-transform: uppercase;
+                color: $listTitleColor;
+                font-size: 14px;
+                cursor: pointer;
+                font-family: $fontHeader;
+                font-weight: 500;
+                &:hover, .active {
+                    transition: .4s;
+                    background-color: $secondaryColor;
+                    color: white !important;
+                }
+            }
+        }
+        #tab-content {
+            text-align: left;
+        }
+        .tab {
+            padding-top: 20px;
+        }
+        .attention-text {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $listTextColor;
+            font-size: 12px;
+            font-family: $fontText;
+        }
+    }
+}
+
+
+
 
 
 .img-responsive {
@@ -359,8 +547,6 @@ a:focus {
 
 .footer-list {
     @include bars;
-    // grid-template-columns: auto auto auto auto auto;
-    // grid-gap: 10px;
     div {
         padding: 20px 0;
             ul, h4 {
