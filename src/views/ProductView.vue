@@ -5,7 +5,7 @@
              <div class="product-view">
                  <div class="product-image">
                      <!-- image here -->
-                    <img src="../assets/img/products/item 7.png" alt="" class="img-responsive">
+                    <img :src="require('@/assets/img/products/' + product.image)" alt="" class="img-responsive">
                  </div>
                  <div class="product-details">
                      <h4>{{ product.name }}</h4>
@@ -27,29 +27,29 @@
                             <a href="#"><i class="fas fa-envelope"></i></a>
                         </div>    
                      </div>
-                     <span class="product-price">89.99</span>
+                     <span class="product-price">{{ product.price }}</span>
                      <div class="product-stockinfo">
-                        <p>Availability: <span></span></p>
-                        <p>Product code: <span></span></p>
-                        <p>Tags: <span></span></p>
+                        <p>Availability: <span>{{product.availability}}</span></p>
+                        <p>Product code: <span>{{product.id}}</span></p>
+                        <p>Tags: <span>{{product.tags}}</span></p>
                      </div>
                      <div class="product-description">
-                        <p>Donec sem lorem laoreet tempor un risus vitae, rutrum sodales nibh suspendisse est congue metus nunc, id viverra elit loreti rhoncus quis consecteur es. Donec pulvinar tempor lorem a pretium justo interdum.
+                        <p>{{product.shortDescription}}
                         </p>
                         <ul>
-                            <li>- Elasticated cuffs</li>
-                            <li>- Casual fit</li>
-                            <li>- 100%</li>
-                            <li>- Free shipping with 4 days delivery</li>
+                            <li>- {{ product.descriptionPerks[0] }}</li>
+                            <li>- {{ product.descriptionPerks[1] }}</li>
+                            <li>- {{ product.descriptionPerks[2] }}</li>
+                            <li>- {{ product.descriptionPerks[3] }}</li>
                         </ul>
                      </div>
                      <div class="product-specification">
                          <div class="product-select">
                              <label for="color">Color</label>
                              <select name="" id="">
-                                 <option value="red">Red</option>
-                                 <option value="red">Black</option>
-                                 <option value="red">Blue</option>
+                                 <option value="red">{{ product.color[0] }}</option>
+                                 <option value="red">{{ product.color[1] }}</option>
+                                 <option value="red">{{ product.descriptionPerks[2] }}</option>
                              </select>
                          </div>
                          <div class="product-select">

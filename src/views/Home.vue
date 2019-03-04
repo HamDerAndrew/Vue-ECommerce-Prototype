@@ -17,7 +17,43 @@
         <div id="popular">
           <div v-for="product in products" :key="product.id">
             <!-- image -->
-            <router-link :to="'/productview/' + product.id"><img src="../assets/img/products/item 1.png" alt="" class="img-responsive"></router-link>
+            <router-link :to="'/productview/' + product.id"><img :src="require('@/assets/img/products/' + product.image)" alt="" class="img-responsive"></router-link>
+            <div class="product-information">
+              <!-- product content on :hover here -->
+              <div class="product-information__icons">
+                <div class="circle">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+           <!-- image hardcoded due to data limit in db reached -->
+           <router-link to="/productview/"><img src="../assets/img/products/item 4.png" alt="" class="img-responsive"></router-link>
+            <div class="product-information">
+              <!-- product content on :hover here -->
+              <div class="product-information__icons">
+                <div class="circle">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <!-- image hardcoded due to data limit in db reached -->
+           <router-link to="/productview/"><img src="../assets/img/products/item 1.png" alt="" class="img-responsive"></router-link>
+            <div class="product-information">
+              <!-- product content on :hover here -->
+              <div class="product-information__icons">
+                <div class="circle">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <!-- image hardcoded due to data limit in db reached -->
+            <router-link to="/productview/"><img src="../assets/img/products/item 6.png" alt="" class="img-responsive"></router-link>
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -207,9 +243,10 @@ export default {
   methods: {
     getData() {
         axios
-        .get("https://my-json-server.typicode.com/HamDerAndrew/vue-ecommerce-prototype/products")
+        .get("https://my-json-server.typicode.com/HamDerAndrew/vue-ecommerce-prototype/products/")
         .then(response => {
             this.products = response.data;
+            console.log(response);
         }) 
         .catch(err => console.log(err.message));
     }
