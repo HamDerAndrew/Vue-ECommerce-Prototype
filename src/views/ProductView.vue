@@ -49,15 +49,15 @@
                              <select name="" id="">
                                  <option value="red">{{ product.color[0] }}</option>
                                  <option value="red">{{ product.color[1] }}</option>
-                                 <option value="red">{{ product.descriptionPerks[2] }}</option>
+                                 <option value="red">{{ product.color[2] }}</option>
                              </select>
                          </div>
                          <div class="product-select">
                              <label for="size">Size</label>
                              <select name="" id="">
-                                 <option value="s">Small</option>
-                                 <option value="m">Medium</option>
-                                 <option value="l">Large</option>
+                                 <option value="s">{{ product.sizes[0] }}</option>
+                                 <option value="m">{{ product.sizes[1] }}</option>
+                                 <option value="l">{{ product.sizes[2] }}</option>
                              </select>
                          </div>
                          <div class="product-input">
@@ -84,36 +84,22 @@
                  </div>
                  <div id="tab-content">
                      <div v-if="activeTab === 1" class="description-tab tab d-none">
-                         <span class="attention-text">Nunc egestas posuere enim, eu maximus erat posuere eget</span>
-                         <p>Sed ut mi mollis, consequat nulla lacinia, hendrerit turpis. Nulla sapien magna, interdum quis pretium nec, pharetra at felis. 
-                             Curabitur dictum sapien est, eget ultricies turpis porta vel. Nam suscipit nec lacus sed imperdiet. Vestibulum a purus risus. 
-                             Nulla et dictum augue, nec efficitur mi. Nam sit amet pretium elit. Aliquam congue, ligula id vehicula vestibulum, orci ex 
-                             vulputate lacus, ac malesuada elit dolor eget ex. Sed quis aliquet risus, ut cursus lectus. In eget lorem tellus.
-                            Quisque eleifend varius nisi nec sagittis. Nulla ullamcorper imperdiet justo, ut venenatis purus lobortis ut. 
-                            Nunc sagittis urna et hendrerit sodales. Nunc molestie risus nec fringilla lacinia. Nulla facilisi. Etiam neque velit, tristique eget 
-                            sollicitudin eget, placerat at metus. Proin dictum lobortis velit, id suscipit orci faucibus ut. Aliquam erat volutpat. 
-                            Vivamus feugiat justo in diam placerat, id dignissim elit auctor. Vestibulum scelerisque sem et lobortis ultricies. 
-                            Morbi suscipit nulla urna. Suspendisse potenti. Nullam varius quam sed nisl dignissim, vel faucibus ipsum blandit. 
-                            Vivamus at suscipit augue. Nam finibus gravida lorem eu viverra. Praesent rhoncus imperdiet ultricies. 
-                            Nullam pretium cursus augue auctor vulputate. Quisque a convallis diam commodo eget diam id, eleifend dictum libero. 
-                            Etiam varius, nisi vel dignissim sodales, enim dui posuere mauris, in aliquet lorem eros eget neque.
-                        </p>
+                         <span class="attention-text">{{ product.longDescription.highlightText }}</span>
+                         <p>{{ product.longDescription.longText }}</p>
                      </div>
                      <div v-if="activeTab === 2" class="video-tab tab  d-none">
-                         <a href="https://www.youtube.com/watch?v=JdZTlGK--QQ">Promo video</a>
+                         <a :href="(product.video)" target="_blank">Promo video</a>
                      </div>
                      <div v-if="activeTab === 3" class="size-tab tab  d-none">
-                         <p>lots of sizes</p>
-                         <p>Nulla et dictum augue, nec efficitur mi. Nam sit amet pretium elit. Aliquam congue, ligula id vehicula vestibulum, orci ex 
-                             vulputate lacus, ac malesuada elit dolor eget ex. Sed quis aliquet risus, ut cursus lectus. In eget lorem tellus.</p>
+                         <p>{{ product.sizeTab }}</p>
                      </div>
                      <div v-if="activeTab === 4" class="delivery-tab tab  d-none">
                          <span class="attention-text">Free Shipping Information</span>
-                         For most countries, including the USA, UK, Canada, Australia, and the EU, we offer FREE shipping on all products! We don't return anything.
+                        <p>{{ product.delivery}} </p>
                      </div>
                      <div v-if="activeTab === 5" class="review-tab tab  d-none">
                          <span class="attention-text">Glorious reviews</span>
-                         <p>This product seems very legit</p>
+                         <p>{{ product.reviews }}</p>
                      </div>
                  </div>
              </div>
