@@ -2,7 +2,7 @@
     <div>
         <h2 class="register-heading">Register</h2>
         <div class="register-container">
-            <form action="">
+            <form v-on:submit.prevent="onSubmit" action="">
                 <div>
                     <input type="email" name="" id="" placeholder="Your email.">
                 </div>
