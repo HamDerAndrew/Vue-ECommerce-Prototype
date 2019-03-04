@@ -2,24 +2,31 @@
     <div>
         <h2 class="register-heading">Register</h2>
         <div class="register-container">
-            <form v-on:submit.prevent="onSubmit" action="">
+            <form action="" novalidate="true">
+                  <p v-if="errors.length">
+                    <b>Please correct the following error(s):</b>
+                    <ul>
+                    <li v-for="error in errors" :key="error">{{ error }}</li>
+                    </ul>
+                </p>
                 <div>
-                    <input type="email" name="" id="" placeholder="Your email.">
+                    <input type="email" name="email" id="email" v-model="email" placeholder="Email.">
                 </div>
                 <div>
-                    <input type="password" name="" id="" placeholder="Your password.">
+                   <input type="password" name="password" id="" v-model="password" placeholder="Password.">
                 </div>
                 <div>
-                    <input type="password" name="" id="" placeholder="Confirm password.">
+                    <input type="password" name="confirmpassword" id="" placeholder="Confirm password.">
                 </div>
                 <div class="checkbox--btn">
                     <input type="checkbox" name="" id="">
                     <p>Sign up for exclusive updates, discounts, new arrivals, contests, and more!</p>
                 </div>
                 <div class="register--btn">
-                    <button type="submit">Create Account</button>
+                    <button v-on:click="checkForm" type="submit">Create Account</button>
                     <p>By clicking 'Create Account', you agree to our <a href="#">Privacy Policy</a></p>
                 </div>
+                
             </form>
         </div>
     </div>
@@ -27,7 +34,26 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            errors:[],
+            email:null,
+            password:null
+        };
+    },
+    methods:{
+    checkForm:function(e) {
+        this.errors = [];
+        if(!this.password) this.errors.push("Password required.");
+        if(!this.email) {
+            this.errors.push("Email required.");
+        } else if(!this.validEmail(this.email)) {
+            this.errors.push("Valid email required.");        
+        }
+        if(!this.errors.length) return true;
+        e.preventDefault();
+        }
+    }
 }
 </script>
 

@@ -29,7 +29,7 @@
           </div>
           <div>
            <!-- image hardcoded due to data limit in db reached -->
-           <router-link to="/productview/"><img src="../assets/img/products/item 4.png" alt="" class="img-responsive"></router-link>
+            <a class="disabled-product" href="#"><img src="../assets/img/products/item 4.png" alt="" class="img-responsive"></a>
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -41,7 +41,7 @@
           </div>
           <div>
             <!-- image hardcoded due to data limit in db reached -->
-           <router-link to="/productview/"><img src="../assets/img/products/item 1.png" alt="" class="img-responsive"></router-link>
+            <a class="disabled-product" href="#"><img src="../assets/img/products/item 1.png" alt="" class="img-responsive"></a>
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -53,7 +53,7 @@
           </div>
           <div>
             <!-- image hardcoded due to data limit in db reached -->
-            <router-link to="/productview/"><img src="../assets/img/products/item 6.png" alt="" class="img-responsive"></router-link>
+            <a class="disabled-product" href="#"><img src="../assets/img/products/item 6.png" alt="" class="img-responsive"></a>
             <div class="product-information">
               <!-- product content on :hover here -->
               <div class="product-information__icons">
@@ -115,6 +115,12 @@
 
 .product-information {
   visibility: hidden;
+}
+
+.disabled-product {
+  &:hover {
+    cursor:not-allowed;
+  }
 }
 
 #product-section {
