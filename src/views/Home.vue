@@ -225,7 +225,6 @@
 
 <script>
 // @ is an alias to /src
-//import HelloWorld from '@/components/HelloWorld.vue'
 import axios from "axios";
 
 export default {
@@ -251,8 +250,5 @@ export default {
         .catch(err => console.log(err.message));
     }
   }
-  // components: {
-  //   HelloWorld
-  // }
 }
 </script>
