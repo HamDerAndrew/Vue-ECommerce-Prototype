@@ -185,10 +185,13 @@ a:focus {
                                 color: white;
                                 background-color: $secondaryColor;
                                 padding: 10px 50px;
-                                font-size: 36px;
+                                p {
+                                    font-size: 30px;
+                                }
                                 span {
                                     display: block;
                                     font-weight: bold;
+                                    color: white;
                                 }
                             }
                         }
