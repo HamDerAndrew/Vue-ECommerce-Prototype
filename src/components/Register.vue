@@ -105,6 +105,7 @@ export default {
     input[type="text"], input[type="password"], input[type="email"], input[type="submit"] {
         padding: 5px 5px;
         width: 100%;
+        border: 1px solid #80808040;
     }
     input[type="checkbox"] {
         border-radius: 0;

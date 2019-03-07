@@ -143,9 +143,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/scss/_var.scss";
-@import "@/scss/_mixins.scss";
-
-
 
 </style>

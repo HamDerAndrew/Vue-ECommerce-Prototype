@@ -6,6 +6,7 @@
                 <sign-in-app></sign-in-app>
             </div>
             <span class="vertical-line"></span>
+            <hr class="horizontal--line">
             <div class="account-register">
                 <register-app></register-app>
             </div>

@@ -28,7 +28,8 @@
                     <router-link to="/"><span>Avenue</span> Fashion</router-link>
                 </div>
                 <div class="nav-container">
-                    <div class="search-nav-wrap">
+                    <span id="open" v-on:click="openThis()">&#9776</span>
+                    <div class="search-nav-wrap" v-bind:class="{mobileToggle: isToggled}">
                         <nav>
                         <ul id="categories">
                             <li class="category-menu"> <a href="#" class="category--link">Mens <i class="fas fa-caret-down"></i></a>
@@ -114,6 +115,7 @@
 export default {
     data() {
         return {
+            isToggled: false,
             casuals: ['Jackets', 'Hoodies & Sweatshirts', 'Polo Shirts', 'Sportswear', 'Trousers & Chinos', 'T-shirts'],
             formals: ['Jackets', 'Shirts', 'Suits', 'Trousers'],
             localStore: [
@@ -123,6 +125,12 @@ export default {
                 {id: 4, country: 'England', city: 'London'}
             ]
         };
+    },
+    methods: {
+        openThis() {
+            this.isToggled = !this.isToggled;
+            console.log("menu clicked");
+        }
     }
 }
 </script>
