@@ -28,7 +28,7 @@
                     <router-link to="/"><span>Avenue</span> Fashion</router-link>
                 </div>
                 <div class="nav-container">
-                    <span id="open" v-on:click="openThis()">&#9776</span>
+                    <span id="open" v-on:click="openThis()">&#9776;</span>
                     <div class="search-nav-wrap" v-bind:class="{mobileToggle: isToggled}">
                         <nav>
                         <ul id="categories">

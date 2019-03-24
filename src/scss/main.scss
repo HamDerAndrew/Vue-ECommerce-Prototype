@@ -146,7 +146,7 @@ a:focus {
                             text-transform: none;
                             visibility: hidden;
                             position: absolute;
-                            top: 110px;
+                            top: 140px;
                             padding: 10px;
                             background-color: $primaryColor;
                             box-shadow: 2px 14px 61px -15px rgba(0,0,0,0.75);
@@ -255,7 +255,7 @@ a:focus {
 
 /* Home page */
 .promo-slider {
-    margin-top: -103px;
+    margin-top: -124px;
     position: relative;
     .slide-btn {
         position: absolute;
@@ -726,6 +726,7 @@ a:focus {
           width: 49%;
           font-size: 25px;
           .fab {
+              cursor: pointer;
               margin: 15px;
               padding: 10px;
           }

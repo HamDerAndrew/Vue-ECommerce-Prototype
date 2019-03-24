@@ -4,7 +4,7 @@
     <div class="grid-container">
       <div class="hand-design">
         <div class="myimage">
-          <img src="../assets/img/handdesign.jpg" alt="tailor items" class="img-responsive">
+          <img src="../assets/img/handdesign.png" alt="tailor items" class="img-responsive">
         </div>
           <div class="mytext">
             <h2>Hand Designed Clothing</h2>
@@ -15,7 +15,7 @@
       </div>
       <div class="ethical-trading">
         <div>
-          <img src="../assets/img/ethical trade.jpg" alt="carrying" class="img-responsive">
+          <img src="../assets/img/ethical trade.png" alt="carrying" class="img-responsive">
         </div>
         <div>
           <h2>Ethical trading</h2>
@@ -27,10 +27,7 @@
       </div>
       <div class="vision">
         <div>
-          <video autoplay loop muted class="video-container">
-          <source src="../assets/video/advertise-vision-compressed.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <img src="../assets/img/companyvalues.png" alt="carrying" class="img-responsive">
         </div>
         <div>
           <h2>our values, vision and strategy</h2>
